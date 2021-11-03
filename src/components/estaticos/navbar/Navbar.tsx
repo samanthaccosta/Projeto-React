@@ -6,12 +6,15 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import {Link} from 'react-router-dom';
+import "./Navbar.css";
+
 
 function Navbar(){
     return(
     <>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{background:"#D97F11"}}>
+      <AppBar position="static" className='corfundo'>
         <Toolbar>
           <IconButton
             size="large"
@@ -22,19 +25,21 @@ function Navbar(){
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{color:"#F2F2F2"}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Home
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{color:"#F2F2F2"}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Postagens
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}style={{color:"#F2F2F2"}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}className="corverdeescuro">
             Temas
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{color:"#F2F2F2"}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Cadastrar tema
           </Typography>
-          <Button style={{color:'#F2F2F2'}}>Login</Button>
+          <Link to={'/login'} className='text-decorator-none'>
+          <Button className="corverdeescuro">Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

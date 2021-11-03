@@ -1,0 +1,26 @@
+.text-decorator-none{
+    text-decoration:none;
+}
+.fundo{
+    background-color: #F8EEE4;
+    min-height: 100vh;
+}
+.fundo2{
+    background-color: #C5CBCB;
+}
+.tamImg{
+    height: auto ;
+    width: 670px;
+}
+.negrito{
+    font-weight: bold !important;
+}
+.corverde{
+    color:#528C3F !important;
+}
+.fundoBotao{
+    background-color: #528C3F !important;
+}
+.rosa{
+    color: #F28177;
+}
