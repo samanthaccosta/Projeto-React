@@ -7,10 +7,20 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router';
+import useLocalStorage from 'react-use-localstorage';
 import "./Navbar.css";
 
 
 function Navbar(){
+  const [token, setToken]= useLocalStorage('token');
+  let history = useHistory();
+
+  function goLogout(){
+    setToken('')
+    alert ("Usuario deslogado com sucesso!")
+    history.push("/login")
+  }
     return(
     <>
     <Box sx={{ flexGrow: 1 }}>
@@ -25,21 +35,44 @@ function Navbar(){
           >
             <MenuIcon />
           </IconButton>
+
+          <Link to="/home">
+          <Box mx={10} className='text-decorator-none'>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Home
           </Typography>
+          </Box>
+          </Link>
+
+          <Link to="/posts">
+            <Box mx={10} className='text-decorator-none'>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Postagens
           </Typography>
+          </Box>
+          </Link>
+
+          <Link to="/temas">
+          <Box mx={10} className='text-decorator-none'>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}className="corverdeescuro">
             Temas
           </Typography>
+          </Box>
+          </Link>
+
+          <Link to="/formularioTema">
+          <Box mx={10} className='text-decorator-none'>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="corverdeescuro">
             Cadastrar tema
           </Typography>
-          <Link to={'/login'} className='text-decorator-none'>
-          <Button className="corverdeescuro">Login</Button>
+          </Box>
           </Link>
+          
+         <Box onClick={goLogout} mx={10} className='text-decorator-none'>
+          <Button className="corverdeescuro">Logout</Button>
+          </Box>
+          
+          
         </Toolbar>
       </AppBar>
     </Box>

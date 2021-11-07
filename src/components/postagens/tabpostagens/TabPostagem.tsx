@@ -4,7 +4,7 @@ import { TabContext, TabPanel } from '@mui/lab';
 import ListaPostagem from '../listapostagens/ListaPostagem';
 import './TabPostagem.css';
 
-ya
+
 function TabPostagem() {
     const [value, setValue] = useState('1')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string){
@@ -14,13 +14,13 @@ function TabPostagem() {
     <>
       <TabContext value={value}>
         <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+          <Tabs centered indicatorColor="secondary" className='corAzul' onChange={handleChange} >
+            <Tab className='corverdeescuro2' label="Todas as postagens" value="1"/>
+            <Tab className='corverdeescuro2' label="Sobre-nós" value="2" />
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+          <Box display="flex" flexWrap="wrap" justifyContent="center" className='corfundo2'>
             <ListaPostagem />
           </Box>
         </TabPanel>
