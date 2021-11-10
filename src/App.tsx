@@ -13,9 +13,13 @@ import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import { Provider } from 'react-redux';
+import store from './store/store';
 let nome = "Samantha Costa"
 function App() {
+  
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
       <Switch>
@@ -63,6 +67,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </Provider>
 
   );
 }
