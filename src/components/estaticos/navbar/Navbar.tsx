@@ -11,6 +11,7 @@ import { useHistory } from 'react-router';
 import "./Navbar.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from  'react-toastify';
 
 
 function Navbar(){
@@ -21,7 +22,17 @@ function Navbar(){
   const dispatch= useDispatch();
 
   function goLogout(){
-    alert ("Usuario deslogado com sucesso!")
+    toast.info ('Usuario deslogado com sucesso!', {
+      position : 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: 'colored',
+      progress: undefined
+
+    });
     history.push("/login")
   }
    var navbarComponent;
